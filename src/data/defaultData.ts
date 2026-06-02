@@ -1,4 +1,4 @@
-import { Member, Placement, Pitch, CurriculumTopic } from '../types';
+import { Member, Placement, Pitch, CurriculumTopic, EducationVP } from '../types';
 
 export const fallbackMembers: Member[] = [
   { name: 'Alexander Morrison', position: 'President', year: '2026', major: 'Economics', bio: 'Passionate about growth equity and technology investing. Previously interned at General Atlantic.', photo_url: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80', coffee_chat_url: 'https://calendly.com/cib-berkeley' },
@@ -179,3 +179,29 @@ export const curriculumSyllabus: CurriculumTopic[] = [
     quantitative: "Backtesting engines: building event-driven backtesters, avoiding look-ahead bias and transaction fee drag."
   }
 ];
+
+export const educationVPs: { fundamental: EducationVP; quantitative: EducationVP } = {
+  fundamental: {
+    name: 'Sophia Bennett',
+    role: 'VP of Education - Fundamental Analysis',
+    photo_url: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
+    initials: 'SB',
+    quote: '"Through case studies of real investments and guest speakers from top firms, we bridge academic theory with practical application."',
+    bioParagraphs: [
+      'Fundamental analysis is the cornerstone of sound investment decision-making. At Capital Investments, we teach our members to look beyond stock prices and understand the underlying businesses driving value creation.',
+      'Our curriculum covers financial statement analysis, valuation methodologies including DCF and comparable company analysis, industry research frameworks, and competitive positioning assessment. Members learn to build detailed financial models and develop investment theses that withstand rigorous questioning.'
+    ]
+  },
+  quantitative: {
+    name: 'Ethan Zhang',
+    role: 'VP of Education - Quantitative Analysis',
+    photo_url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+    initials: 'EZ',
+    quote: '"The intersection of finance and technology is where the most exciting opportunities exist."',
+    bioParagraphs: [
+      'Quantitative analysis empowers investors to identify patterns, test hypotheses, and make data-driven decisions at scale. In our quantitative track, members learn to leverage statistical methods and computational tools to gain investment edges.',
+      'We cover factor investing, backtesting frameworks, portfolio optimization, risk modeling, and machine learning applications in finance. Members gain hands-on experience with Python, R, and industry-standard data platforms to build and validate investment strategies.'
+    ]
+  }
+};
+

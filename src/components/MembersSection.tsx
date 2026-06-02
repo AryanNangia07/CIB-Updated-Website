@@ -54,10 +54,6 @@ export default function MembersSection({ members }: MembersSectionProps) {
                     }}
                   />
                 )}
-                
-                <span className="absolute bottom-3 left-3 px-2 py-0.5 text-[9px] font-mono tracking-widest bg-black/80 backdrop-blur-sm border border-stone-800 text-stone-400 rounded uppercase z-10">
-                  Class' {member.year}
-                </span>
               </div>
 
               {/* Information Area */}

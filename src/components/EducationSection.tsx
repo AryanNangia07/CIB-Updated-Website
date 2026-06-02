@@ -1,6 +1,9 @@
 import { BookOpen, Award, FileText, Compass } from 'lucide-react';
+import { educationVPs } from '../data/defaultData';
 
 export default function EducationSection() {
+  const { fundamental, quantitative } = educationVPs;
+
   return (
     <div className="max-w-5xl mx-auto px-4 py-12" id="education-section">
       <h1 className="text-4xl sm:text-5xl font-serif font-light text-white mb-6">Education & Resources</h1>
@@ -15,24 +18,36 @@ export default function EducationSection() {
         <div className="bg-stone-950 border border-stone-900 p-8 rounded-lg flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-stone-850 rounded-full flex items-center justify-center text-white font-serif text-xl border border-stone-800">
-                SB
+              <div className="w-16 h-16 bg-stone-850 rounded-full flex items-center justify-center text-white font-serif text-xl border border-stone-800 relative overflow-hidden shrink-0">
+                <span className="text-white font-serif text-xl select-none">
+                  {fundamental.initials}
+                </span>
+                {fundamental.photo_url && (
+                  <img
+                    src={fundamental.photo_url}
+                    alt={fundamental.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                )}
               </div>
               <div>
-                <h3 className="text-lg font-serif font-medium text-white">Sophia Bennett</h3>
-                <div className="text-xs text-stone-500 uppercase tracking-widest font-mono">VP of Education - Fundamental Analysis</div>
+                <h3 className="text-lg font-serif font-medium text-white">{fundamental.name}</h3>
+                <div className="text-xs text-stone-500 uppercase tracking-widest font-mono">{fundamental.role}</div>
               </div>
             </div>
             
-            <p className="text-sm text-stone-300 leading-relaxed mb-4 font-sans font-light">
-              Fundamental analysis is the cornerstone of sound investment decision-making. At Capital Investments, we teach our members to look beyond stock prices and understand the underlying businesses driving value creation.
-            </p>
-            <p className="text-sm text-stone-300 leading-relaxed mb-4 font-sans font-light">
-              Our curriculum covers financial statement analysis, valuation methodologies including DCF and comparable company analysis, industry research frameworks, and competitive positioning assessment. Members learn to build detailed financial models and develop investment theses that withstand rigorous questioning.
-            </p>
+            {fundamental.bioParagraphs.map((paragraph, index) => (
+              <p key={index} className="text-sm text-stone-300 leading-relaxed mb-4 font-sans font-light">
+                {paragraph}
+              </p>
+            ))}
           </div>
           <p className="text-xs text-stone-500 font-mono italic mt-4">
-            "Through case studies of real investments and guest speakers from top firms, we bridge academic theory with practical application."
+            {fundamental.quote}
           </p>
         </div>
 
@@ -40,24 +55,36 @@ export default function EducationSection() {
         <div className="bg-stone-950 border border-stone-900 p-8 rounded-lg flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-stone-850 rounded-full flex items-center justify-center text-white font-serif text-xl border border-stone-800">
-                EZ
+              <div className="w-16 h-16 bg-stone-850 rounded-full flex items-center justify-center text-white font-serif text-xl border border-stone-800 relative overflow-hidden shrink-0">
+                <span className="text-white font-serif text-xl select-none">
+                  {quantitative.initials}
+                </span>
+                {quantitative.photo_url && (
+                  <img
+                    src={quantitative.photo_url}
+                    alt={quantitative.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                )}
               </div>
               <div>
-                <h3 className="text-lg font-serif font-medium text-white">Ethan Zhang</h3>
-                <div className="text-xs text-stone-500 uppercase tracking-widest font-mono">VP of Education - Quantitative Analysis</div>
+                <h3 className="text-lg font-serif font-medium text-white">{quantitative.name}</h3>
+                <div className="text-xs text-stone-500 uppercase tracking-widest font-mono">{quantitative.role}</div>
               </div>
             </div>
             
-            <p className="text-sm text-stone-300 leading-relaxed mb-4 font-sans font-light">
-              Quantitative analysis empowers investors to identify patterns, test hypotheses, and make data-driven decisions at scale. In our quantitative track, members learn to leverage statistical methods and computational tools to gain investment edges.
-            </p>
-            <p className="text-sm text-stone-300 leading-relaxed mb-4 font-sans font-light">
-              We cover factor investing, backtesting frameworks, portfolio optimization, risk modeling, and machine learning applications in finance. Members gain hands-on experience with Python, R, and industry-standard data platforms to build and validate investment strategies.
-            </p>
+            {quantitative.bioParagraphs.map((paragraph, index) => (
+              <p key={index} className="text-sm text-stone-300 leading-relaxed mb-4 font-sans font-light">
+                {paragraph}
+              </p>
+            ))}
           </div>
           <p className="text-xs text-stone-500 font-mono italic mt-4">
-            "The intersection of finance and technology is where the most exciting opportunities exist."
+            {quantitative.quote}
           </p>
         </div>
 

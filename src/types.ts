@@ -33,3 +33,13 @@ export interface CurriculumTopic {
   fundamental: string;
   quantitative: string;
 }
+
+export interface EducationVP {
+  name: string;
+  role: string;
+  photo_url: string;
+  initials: string;
+  quote: string;
+  bioParagraphs: string[];
+}
+
