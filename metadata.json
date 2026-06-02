@@ -1,0 +1,6 @@
+{
+  "name": "Capital Investments at Berkeley",
+  "description": "The official website for Capital Investments at Berkeley (CIB), UC Berkeley's premier investment group specializing in fundamental research, quantitative strategies, and career development.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
